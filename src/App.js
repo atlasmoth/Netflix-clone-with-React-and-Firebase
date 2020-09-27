@@ -2,21 +2,34 @@ import React from "react";
 import { JumbotronContainer } from "./containers/jumbotron";
 import { FooterContainer } from "./containers/footer";
 import { AccordionContainer } from "./containers/accordion";
+import { HeaderContainer } from "./containers/Header";
 import * as Routes from "./constants/routes";
 import { Redirect, Route, Switch } from "react-router-dom";
+import Home from "./pages/Home";
+import Signup from "./pages/Signup";
+import Browse from "./pages/Browse";
+import Signin from "./pages/Signin";
 
 function App() {
   return (
-    <>
-      <Switch>
-        <Route exact path={Routes.SIGN_IN} />
-        <Route exact path={Routes.SIGN_UP} />
-        <Route exact render={() => <Redirect to={Routes.HOME} />} />
-      </Switch>
-      <JumbotronContainer />
-      <AccordionContainer />
-      <FooterContainer />
-    </>
+    <Switch>
+      <Route exact path={Routes.SIGN_IN} component={Signin} />
+      <Route exact path={Routes.SIGN_UP} component={Signup} />
+      <Route exact path={Routes.BROWSE} component={Browse} />
+      <Route
+        exact
+        path={Routes.HOME}
+        render={() => (
+          <Home>
+            <HeaderContainer />
+            <JumbotronContainer />
+            <AccordionContainer />
+            <FooterContainer />
+          </Home>
+        )}
+      />
+      <Route exact render={() => <Redirect to={Routes.HOME} />} />
+    </Switch>
   );
 }
 
