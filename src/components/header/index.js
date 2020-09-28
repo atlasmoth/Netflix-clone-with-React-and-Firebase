@@ -14,14 +14,14 @@ Header.Frame = function HeaderFrame({ children, ...restProps }) {
   return <Container {...restProps}>{children}</Container>;
 };
 
-Header.Logo = function HeaderLogo({ src, alt, to, ...restProps }) {
+Header.Logo = function HeaderLogo({ src, to, ...restProps }) {
   return (
-    <Link to={`/${to}`}>
-      <Logo {...restProps} alt="alt" />
+    <Link to={`${to}`}>
+      <Logo {...restProps} alt="alt" src={src} />
     </Link>
   );
 };
 
-Header.Button = function HeaderButton({ children, ...restProps }) {
-  return <Button>{children}</Button>;
+Header.Button = function HeaderButton({ to, children, ...restProps }) {
+  return <Button to={to}>{children}</Button>;
 };
