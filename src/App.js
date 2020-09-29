@@ -7,6 +7,8 @@ import Signup from "./pages/Signup";
 import Browse from "./pages/Browse";
 import Signin from "./pages/Signin";
 
+// import { firebase } from "./lib/firebase.prod";
+
 function App() {
   return (
     <Switch>
