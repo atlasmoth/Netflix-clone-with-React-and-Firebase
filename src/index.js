@@ -5,11 +5,11 @@ import App from "./App";
 import "normalize.css";
 import { BrowserRouter } from "react-router-dom";
 import { FirebaseContext } from "./context/firebase";
-// import {} from "./lib/firebase.prod";
+import { firebase } from "./lib/firebase.prod";
 
 ReactDOM.render(
   <BrowserRouter>
-    <FirebaseContext.Provider value={{}}>
+    <FirebaseContext.Provider value={{ firebase }}>
       <GlobalStyles />
       <App />
     </FirebaseContext.Provider>
