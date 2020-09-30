@@ -21,15 +21,12 @@ export function ProtectedRoute({ user, children, ...restProps }) {
   return (
     <Route
       {...restProps}
-      render={({ location }) => {
+      render={() => {
         if (user) {
           return children;
         }
         if (!user) {
-          console.log("This has run");
-          return (
-            <Redirect to={{ pathname: "sigin", state: { from: location } }} />
-          );
+          return <Redirect to="/signin" />;
         }
       }}
     />
