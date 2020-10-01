@@ -1,5 +1,9 @@
 import React from "react";
 import styled from "styled-components/macro";
+const Title = styled.h2`
+  color: #fff;
+  padding-left: 1rem;
+`;
 
 const List = styled.div`
   display: flex;
@@ -67,4 +71,8 @@ Browse.BrowseList = function BrowseList({ children, ...restProps }) {
 
 Browse.BrowseCard = function BrowseCard({ children, ...restProps }) {
   return <Card>{children}</Card>;
+};
+
+Browse.Title = function BrowseTitle({ children, ...restProps }) {
+  return <Title>{children}</Title>;
 };

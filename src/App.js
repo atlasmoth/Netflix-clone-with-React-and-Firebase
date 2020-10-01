@@ -27,17 +27,13 @@ function App() {
 
   useEffect(() => {
     const listener = firebase.auth().onAuthStateChanged((authUser) => {
-      if (authUser && authUser !== undefined) {
-        dispatch({ type: "auth", user: authUser });
-      } else {
-        dispatch({ type: "auth", user: null });
-      }
+      dispatch({ type: "auth", user: authUser });
     });
     return () => listener();
   }, [firebase]);
-  console.log(state);
+
   return (
-    <globalAuth.Provider value={{ user: state.user }}>
+    <globalAuth.Provider value={{ user: state.user, dispatch }}>
       <Switch>
         <Route exact path={Routes.SIGN_IN}>
           <IsUserRedirect
