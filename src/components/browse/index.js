@@ -38,24 +38,30 @@ const Card = styled.div`
   flex-direction: column;
   height: 350px;
   border-radius: 1rem;
-  background-color: #17141d;
+  background-image: linear-gradient(
+      45deg,
+      rgba(86, 80, 80, 0.3),
+      rgba(50, 44, 44, 0.7)
+    ),
+    url("${({ src }) => src}");
+  cursor: pointer;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   box-shadow: -1rem 0 3rem rgba(0, 0, 0, 1);
   padding: 1.5rem;
   transition: 0.3s ease;
   margin-left: -10rem;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: bold;
 
   &:hover {
     transform: translateY(-1.5rem);
   }
   &:hover ~ & {
     transform: translateX(10rem);
-  }
-
-  h2:hover {
-    background: linear-gradient(90deg, #ff8a00, #e52e71);
-    text-shadow: none;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
   }
 `;
 
@@ -69,8 +75,8 @@ Browse.BrowseList = function BrowseList({ children, ...restProps }) {
   return <List>{children}</List>;
 };
 
-Browse.BrowseCard = function BrowseCard({ children, ...restProps }) {
-  return <Card>{children}</Card>;
+Browse.BrowseCard = function BrowseCard({ src, children, ...restProps }) {
+  return <Card src={src}>{children}</Card>;
 };
 
 Browse.Title = function BrowseTitle({ children, ...restProps }) {

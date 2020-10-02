@@ -10,8 +10,12 @@ export function BrowseContainer({ slides: { series, films } }) {
       <Browse.Title>Series</Browse.Title>
       <Browse.BrowseList>
         {series.series.map((item) => (
-          <Browse.BrowseCard key={item.docId}>
-            <h2>{item.description}</h2>
+          <Browse.BrowseCard
+            key={item.docId}
+            src={`/images/series/${item.genre}/${item.slug}/large.jpg`}
+          >
+            <h3>{item.title}</h3>
+            <p>{item.description}</p>
           </Browse.BrowseCard>
         ))}
       </Browse.BrowseList>
@@ -19,8 +23,12 @@ export function BrowseContainer({ slides: { series, films } }) {
       <Browse.Title>Films</Browse.Title>
       <Browse.BrowseList>
         {films.films.map((item) => (
-          <Browse.BrowseCard key={item.docId}>
-            <h2>{item.description}</h2>
+          <Browse.BrowseCard
+            key={item.docId}
+            src={`/images/films/${item.genre}/${item.slug}/large.jpg`}
+          >
+            <h3>{item.title}</h3>
+            <p>{item.description}</p>
           </Browse.BrowseCard>
         ))}
       </Browse.BrowseList>

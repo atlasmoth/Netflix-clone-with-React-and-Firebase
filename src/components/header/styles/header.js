@@ -54,3 +54,20 @@ export const Button = styled(Link)`
     background-color: #f40612;
   }
 `;
+
+export const Logout = styled.button`
+  display: block;
+  background-color: #e50914;
+  width: 84px;
+  height: fit-content;
+  border: 0px;
+  font-size: 15px;
+  border-radius: 3px;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  color: #fff;
+
+  &:hover {
+    background-color: #f40612;
+  }
+`;
