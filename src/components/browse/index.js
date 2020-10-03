@@ -44,7 +44,6 @@ const Card = styled.div`
       rgba(50, 44, 44, 0.7)
     ),
     url("${({ src }) => src}");
-  cursor: pointer;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;

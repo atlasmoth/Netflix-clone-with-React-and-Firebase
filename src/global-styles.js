@@ -11,4 +11,19 @@ export const GlobalStyles = createGlobalStyle`
   color : #333;
   font-size : 16px;
  }
+ button{
+  background-color: #e50914;
+  border: 0px;
+  font-size: 15px;
+  border-radius: 3px;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  color: #fff;
+  cursor : pointer;
+
+  &:hover {
+    background-color: #f40612;
+    
+  }
+ }
 `;
